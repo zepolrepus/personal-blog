@@ -29,7 +29,7 @@ This isn't a coding book, but it's a powerful memoir about growing up in a chall
 
 ---
 
-> **Information: Did you know?**  
+> [!Note]**Information: Did you know?**  
 > Reading about topics *outside* of coding can boost creativity and help you see problems from different angles. Biographies, memoirs, and even works of fiction can all contribute to your growth as a developer.
 
 ## 4. *The Hobbit* by J.R.R. Tolkien

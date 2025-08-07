@@ -16,6 +16,7 @@ This quote rings true for me. Nothing beats rolling up your sleeves and coding, 
 ---
 
 ## Diving into the Essentials
+
 1. **Variables**: These are like containers for storing data. You can declare a variable using `let`, `const`, or `var`.
 2. **Data Types**: Common ones include **strings**, **numbers**, **booleans**, **null**, and **undefined**.
 3. **Functions**: Think of these as reusable code blocks that perform specific tasks.
@@ -27,6 +28,7 @@ Even though these building blocks may seem straightforward, mastering them is ke
 ---
 
 ## A Quick Code Example
+
 Here's a tiny snippet that shows how you might use JavaScript to greet users and add two numbers:
 
 ```js
@@ -56,10 +58,13 @@ I love these little examples because they showcase just how straightforward Java
 ---
 
 ## My Biggest Takeaway
+
 JavaScript initially felt intimidating, but after a few days of experimenting, I realized that it's basically a set of rules and tools that help you tell your browser what to do. As someone who likes to *see things happen* in real-time, JavaScript is an absolute delight. Just remember to:
 
 - **Experiment often** and break things—mistakes will teach you a lot.
 - **Use browser DevTools** to debug your code.
 - **Check documentation** like MDN (Mozilla Developer Network) whenever you're stuck.
 
-Most importantly, keep it fun! I'm excited to continue exploring more complex concepts—like arrays, objects, and eventually frameworks like React. Thanks for reading, and happy coding!
+Most importantly, keep it fun! I'm excited to continue exploring more complex concepts—like arrays, objects, and eventually frameworks like React. Thanks for reading, and happy coding!.
+
+--Paulina

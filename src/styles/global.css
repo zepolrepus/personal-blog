@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'rehype-callouts/theme/obsidian';
 @custom-variant dark (&:where(.dark, .dark *));
 
 @plugin "@tailwindcss/typography";
