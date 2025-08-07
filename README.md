@@ -40,7 +40,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/zepolrepus/personal-blog](https://github.com/zepolrepus/personal-blog)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://personal-blog-phi-lake.vercel.app/](https://personal-blog-phi-lake.vercel.app/)
 
 ## My process
 

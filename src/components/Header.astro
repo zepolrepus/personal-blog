@@ -1,3 +1,6 @@
+---
+import Link from '../components/Link.astro';
+---
 <header>
     <nav class="bg-neutral-0 dark:bg-neutral-800 border-1 border-neutral-200 dark:border-neutral-700 dark:text-neutral-400 text-base leading-snug p-1.5 rounded-[10px] flex flex-row justify-between">
         <img 
@@ -7,10 +10,10 @@
         />
         <div class="flex flex-row justify-end items-center w-3/4 gap-6">
             <div class="flex flex-row justify-around gap-6">
-                <a href="/" class="hover:underline decoration-blue-500 decoration-2">Home</a>
-                <a href="/blog/" class="hover:underline decoration-blue-500 decoration-2">Blog</a>
-                <a href="/about/" class="hover:underline decoration-blue-500 decoration-2">About</a>
-                <a href="/newsletter/" class="hover:underline decoration-blue-500 decoration-2">Newsletter</a>
+                <Link href="/" styles="hover:underline decoration-blue-500 decoration-2" title="Home" />
+                <Link href="/blog/" styles="hover:underline decoration-blue-500 decoration-2" title="Blog" />
+                <Link href="/about/" styles="hover:underline decoration-blue-500 decoration-2" title="About" />
+                <Link href="/newsletter/" styles="hover:underline decoration-blue-500 decoration-2" title="Newsletter" />
             </div>
             <button 
                 id="btnThemeChanger"

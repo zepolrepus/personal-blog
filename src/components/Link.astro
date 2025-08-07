@@ -1,0 +1,16 @@
+---
+const currentPath = Astro.url.pathname;
+
+const { href, styles, title} = Astro.props;
+let styles2 = styles;
+
+if (currentPath == href) {
+    styles2 = styles + ' underline';
+}
+
+if (currentPath == '//') {
+    styles2 = styles + ' underline';
+}
+
+---
+<a href={ href } class={ styles2 }>{ title }</a>
