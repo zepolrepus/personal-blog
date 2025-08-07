@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Prose from "../../components/Prose.astro";
+
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const posts = await getCollection('blog');
+    return posts.map(post =>({
+        params: { slug: post.data.slug },
+        props: { post }
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+
+<Layout>
+    <main>
+        <section class="w-[620px] mx-auto">
+            <div class="px-3 border-1 border-b-0 border-neutral-200 dark:border-neutral-700 pt-10">
+                <h1 class="text-[32px] text-neutral-900 dark:text-neutral-0 leading-snug font-bold">{post.data.title}</h1>
+                <p class="text-base leading-snug text-neutral-600 dark:text-neutral-400 italic pb-4 pt-2">
+                    Published { post.data.publishedAt.getDate() + ' ' + post.data.publishedAt.toLocaleString('en-US', { month : 'long' }) + ', ' + post.data.publishedAt.getYear()}
+                </p>
+                <Prose >
+                    <Content />
+                </Prose>
+                <Footer />
+            </div>
+        </section>
+    </main>
+</Layout>
+
+
+
+

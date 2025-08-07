@@ -1,14 +1,26 @@
+---
+// Supports weights 100-900
+import '@fontsource-variable/dm-sans';
+// Supports weights 300-700
+import '@fontsource-variable/fira-code';
+import '../styles/global.css';
+
+import Header from '../components/Header.astro';
+---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  		<title>Frontend Mentor | Personal blog</title>
 	</head>
-	<body>
-		<slot />
+	<body class="bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 text-lg leading-normal font-dm bg-[url(/images/pattern-light.svg)] dark:bg-[url(/images/pattern-dark.svg)]">
+		<div class="container mx-auto w-[640px] my-5">
+			<Header />
+			<slot />
+		</div>
 	</body>
 </html>
 

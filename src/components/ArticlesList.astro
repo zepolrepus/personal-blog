@@ -1,0 +1,52 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+
+const { title, numArticles } = Astro.props;
+const currentPath = Astro.url.pathname;
+const visible = (currentPath == '/blog/');
+
+const borderStyle = visible ? ' border-t-1 pt-5 border-t-neutral-200 dark:border-t-neutral-700' : '';
+
+
+const allArticles = await getCollection('blog');
+const sortedArticles = allArticles.sort(
+    (a, b) => b.data.publishedAt - a.data.publishedAt
+).slice(0, numArticles);
+
+
+---
+
+<div class=" mx-2.5 flex flex-col gap-5 py-8">
+    <h1 class="text-[32px] text-neutral-900 dark:text-neutral-0 leading-snug font-bold">{ title } <span class="underline decoration-3 decoration-blue-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h1>
+    { visible && (
+        <span class="text-neutral-600 dark:text-neutral-400">Below are all my recent blog posts. Click on any title to read full article.</span>
+    )}
+    
+    { sortedArticles.map((article: any) => {
+
+        const date = new Date(article.data.publishedAt);
+        
+        const day = date.getDate();
+        const month = date.toLocaleString('en-US', { month : 'long' });
+        const year = date.getFullYear();
+    
+        return (
+            <div class="flex flex-col gap-1">
+                <a 
+                href={`/blog/${article.data.slug}`}
+                class={`text-neutral-700 dark:text-neutral-0 text-xl leading-snug font-semibold hover:underline hover:font-light ${borderStyle}`}
+                >{ article.data.title }</a>
+                <span class="text-base leading-snug text-neutral-600 dark:text-neutral-400 italic">{ month + ' ' + day + ', ' + year }</span>
+                {visible && (
+                    <p class="text-base leading-snug text-neutral-600 dark:text-neutral-400">{ article.data.description }</p>
+                )}
+            </div>
+        )}
+    )}
+    {
+        !visible && (<a href="/blog/" class="underline decoration-blue-500 decoration-2 font-bold hover:font-normal">View all articles</a>)
+    }
+        
+    
+</div>
