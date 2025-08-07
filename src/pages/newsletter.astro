@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+---
+
+<Layout>
+    <main>
+        <section class="w-[620px] mx-auto">
+            <div class="w-full border-1 border-b-0 border-neutral-200 dark:border-neutral-700 min-h-screen flex flex-col justify-between">
+                <div>
+
+                
+                <div class="mx-2.5 my-10">
+                <h1 id="main" class="text-[32px] text-neutral-900 dark:text-neutral-0 leading-snug font-bold mt-12 underline decoration-blue-500 decoration-8">Newsletter</h1>
+                <p class="py-3">
+                Want to stay updated on my latest articles, coding tutorials, and personal adventures? Sign up for my newsletter! It's a simple way to keep track of new posts and occasional coding tips I discover. Just drop your email in the sign-up box, and I'll send you updates whenever there's something new to share.
+                </p>
+                <p class="py-3 font-bold">I'd love to have you along for the ride and also hear about your own journey!</p>
+            </div>
+            <form id="miForm">
+            <div class="w-full mx-2.5">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+            <input type="text" id="inpEmail" 
+            class="dark:bg-neutral-800 w-[600px] h-12 border-1 dark:border-neutral-600 rounded-xl p-3 dark:placeholder-neutral-300 placeholder-neutral-700 focus:dark:border-neutral-800" 
+            
+            placeholder="email@example.com" required />
+            <p  id="messageOK"
+                class="mt-2 text-sm text-green-700 hidden"><span class="font-medium"></span> You’re subscribed! Check your inbox for updates.</p>
+            <p  id="menssageError"
+                class="mt-2 text-sm text-red-600 hidden"><span class="font-medium"></span> Please enter a valid email address.</p>
+            <button id="btnEmail"
+                    class="text-neutral-900 bg-blue-500 rounded-[10px] p-2 my-3 cursor-pointer">
+                Stay update
+            </button>
+            </div>
+            </form>
+            <p class="text-neutral-600 dark:text-neutral-400 text-base leading-snug">
+                 Unsubscribe anytime. No spam, I promise 🙂
+            </p>
+        </div>
+        </div>
+                <Footer />
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<script>
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    function validateEmail(email: string) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    const btnEmail = document.getElementById('btnEmail');
+    btnEmail?.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('inpEmail')?.value;
+        
+        const messageError = document.getElementById('menssageError');
+        const messageOK = document.getElementById('messageOK');
+
+        messageError?.classList.add('hidden');
+        messageOK?.classList.add('hidden');
+
+        if (validateEmail(email)){
+        
+            messageOK?.classList.remove('hidden');
+        } else {
+            
+            messageError?.classList.remove('hidden');
+        }
+    });
+</script>
+
+<style>
+    h1#main {
+        text-underline-offset: -0.1em;
+        text-decoration-skip-ink: none;
+    }
+</style>
